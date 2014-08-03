@@ -10,8 +10,10 @@ module.exports = function(app) {
 		Todo.find(function(err, todos) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
-			if (err)
+			if (err) {
 				res.send(err)
+				return;
+			}
 
 			res.json(todos); // return all todos in JSON format
 		});
@@ -25,13 +27,18 @@ module.exports = function(app) {
 			text : req.body.text,
 			done : false
 		}, function(err, todo) {
-			if (err)
+			if (err) {
 				res.send(err);
+				return;
+			}
 
 			// get and return all the todos after you create another
 			Todo.find(function(err, todos) {
-				if (err)
+				if (err) {
 					res.send(err)
+					return;
+				}
+
 				res.json(todos);
 			});
 		});

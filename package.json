@@ -1,12 +1,13 @@
 {
-  "name"         : "node-todo",
-  "version"      : "0.0.0",
-  "description"  : "Simple todo application.",
+  "name"         : "node-postgres-json-todo",
+  "version"      : "0.0.1",
+  "description"  : "Simple todo application, with Postgres backend, using JSON storage.",
   "main"         : "server.js",
-  "author"       : "Scotch",
+  "author"       : "Gurjeet Singh",
+  "original author": "Scotch",
   "dependencies" : {
     "express"         : "~4.6.1",
-    "mongoose"        : "~3.8.13",
+    "pg.js"           : "~3.4",
     "morgan"          : "~1.1.1",
     "body-parser"     : "~1.4.3",
     "method-override" : "~2.1.1"
